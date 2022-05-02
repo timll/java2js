@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Password Page</title>
+</head>
+
+<body>
+    <label for="pw">Password</label>
+    <input id="pw" name="pw" type="password">
+    <button type="submit" id="submit">Submit</button>
+
+    <span style="color: green; display: none;" id="succ">Success!</span>
+    <span style="color: red; display: none;" id="fail">Fail!</span>
+
+    <script>
+        document.getElementById("submit").addEventListener("click", buttonPressed);
+        function buttonPressed() {
+            var button = document.getElementById("pw");
+            var input = button.value;
+            if (java.check(input)) {
+                document.getElementById("succ").style.display = "inline";
+                document.getElementById("fail").style.display = "none";
+            } else {
+                document.getElementById("fail").style.display = "inline";
+                document.getElementById("succ").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
